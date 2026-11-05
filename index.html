@@ -317,7 +317,7 @@ footer a{color:inherit}
     <div class="eyebrow" style="color:#E3D1B4">Estudo de rentabilidade · novembro 2026</div>
     <h1 class="logo">ILHΛ STΛY<span class="tag">HOME RESORT</span></h1>
     <p class="sub">Um apartamento ao lado do Parque Olímpico e do Riocentro, feito para alugar por temporada.</p>
-    <div class="loc">Av. Carlos Lima, 475 · Ilha Pura · Barra Olímpica</div>
+    <div class="loc">Av. Carlos Lima, 475 · Ilha Pura · Rio de Janeiro</div>
     <div class="kpis" id="kpis">
       <div class="kpi main"><b class="count" id="k1">R$ 0</b><span>líquido por mês no 1 quarto, com gestão Lobie (cenário Base)</span></div>
       <div class="kpi"><b class="count" id="k2">R$ 0</b><span>líquido por mês na Double Suíte operando com duas chaves</span></div>
@@ -343,10 +343,10 @@ footer a{color:inherit}
 <main>
 <section id="airbnb"><div class="wrap">
   <div class="eyebrow">Diárias reais no Airbnb</div>
-  <h2 class="reveal">Quanto custa se hospedar na Ilha Pura em cada data</h2>
+  <h2 class="reveal">Quanto custam 2 diárias na Ilha Pura em cada data</h2>
   <p class="lead" id="realLead"></p>
   <div class="dates stag" id="dates"></div>
-  <div class="card reveal"><h3>Faixa de preço por noite, data a data</h3>
+  <div class="card reveal"><h3>Faixa de preço de 2 diárias, data a data</h3>
     <div class="chart tall"><canvas id="cReal" role="img" aria-label="Faixa de preço por noite no Airbnb, mediana e diária usada no estudo"></canvas></div>
     <p class="note" id="realNote"></p></div>
 </div></section>
@@ -479,7 +479,7 @@ footer a{color:inherit}
   <div class="nights stag" id="nights"></div>
   <p class="note" id="nightsNote"></p>
   <div class="card reveal">
-    <h3>Líquido por mês: diária × noites alugadas</h3>
+    <h3>Líquido por mês: valor de 2 diárias × noites alugadas</h3>
     <div class="tablewrap"><table id="tUnid"></table></div>
     <p class="note" id="tUnidNote"></p>
   </div>
@@ -494,7 +494,7 @@ footer a{color:inherit}
       <div><div style="font-size:18px;margin-bottom:8px">Condição de compra</div>
         <div class="seg" id="segCond" role="group" aria-label="Condição"><button type="button" aria-pressed="true" data-v="0">Tabela direta 30/70</button><button type="button" aria-pressed="false" data-v="0.06">Tabela investidor (−6%)</button><button type="button" aria-pressed="false" data-v="0.12">À vista (−12%)</button></div>
         <div class="hint" id="hPreco"></div></div>
-      <div><label for="sAdr"><span id="lAdr">Diária em dias comuns</span> <output id="oAdr" class="num">R$ 225</output></label><input type="range" id="sAdr" min="160" max="400" step="5" value="225"><div class="hint" id="hAdr"></div></div>
+      <div><label for="sAdr"><span id="lAdr">2 diárias em dias comuns</span> <output id="oAdr" class="num">R$ 450 (2 diárias)</output></label><input type="range" id="sAdr" min="160" max="400" step="5" value="225"><div class="hint" id="hAdr"></div></div>
       <div><label for="sOcc">Ocupação em dias comuns <output id="oOcc" class="num">53%</output></label><input type="range" id="sOcc" min="30" max="80" step="1" value="53"></div>
       <div><div style="font-size:18px;margin-bottom:8px">Gestão</div>
         <div class="seg" id="segGest" role="group" aria-label="Gestão"><button type="button" aria-pressed="true" data-v="lobie">Lobie</button><button type="button" aria-pressed="false" data-v="auto">Autogestão</button></div></div>
@@ -510,7 +510,7 @@ footer a{color:inherit}
       <div class="row"><span>Retorno sobre o investimento total</span><b id="rYield">–</b></div>
       <div class="row"><span>Investimento total</span><b id="rInv">–</b></div>
       <div class="row"><span>Ocupação média do ano</span><b id="rOcc">–</b></div>
-      <div class="row"><span>Diária média do ano</span><b id="rAdrM">–</b></div>
+      <div class="row"><span>2 diárias, média do ano</span><b id="rAdrM">–</b></div>
       <div class="row"><span>Comparado ao aluguel tradicional</span><b id="rX">–</b></div>
     </div>
   </div>
@@ -598,7 +598,7 @@ footer a{color:inherit}
     <li>Estudo de rentabilidade Lobie (AirDNA, mercado local)</li>
     <li><a href="https://diariodorio.com/turismo-e-viagem/2026/10/06/eventos-impulsionam-hoteis-do-rio-e-ocupacao-chega-a-77-em-outubro.html" target="_blank" rel="noopener">HotéisRIO via Diário do Rio, 06/10/2026</a></li>
     <li>HotéisRIO e Embratur via Diário do Rio: Carnaval, Réveillon e turismo</li>
-    <li>VivaReal: aluguéis de 1 quarto na Barra Olímpica</li>
+    <li>VivaReal: aluguéis de 1 quarto na Ilha Pura e Barra Olímpica</li>
     <li>DGABC e Diário do Rio: Rock in Rio 2026 e 2028</li>
     <li>Brasil Energia: ROG.e 2026</li>
     <li>Diário do Rio e PublishNews: Bienal do Livro</li>
@@ -835,10 +835,10 @@ function renderCal(animate) {
 function realEv(id) {
   const R = REAL[tipoKey()], g = n => R.find(d => d.nome === n);
   const t = U.chaves ? "2 quartos" : "1 quarto";
-  if (id === "reveillon") return `No Airbnb hoje: ${brl(g("Réveillon").med)} por noite (mediana dos ${t} da Ilha Pura).`;
-  if (id === "carnaval") return `No Airbnb hoje: ${brl(g("Carnaval").med)} por noite para o Carnaval 2027.`;
-  if (id === "verao") return `No Airbnb hoje: ${brl(g("Verão").med)} por noite em janeiro, num dia de semana.`;
-  if (id === "rir") return "Hotéis perto do Rock in Rio 2026: de R$ 1.200 a R$ 4.200 por noite.";
+  if (id === "reveillon") return `No Airbnb hoje: ${brl(g("Réveillon").med * 2)} por 2 diárias (mediana dos ${t} da Ilha Pura).`;
+  if (id === "carnaval") return `No Airbnb hoje: ${brl(g("Carnaval").med * 2)} por 2 diárias no Carnaval 2027.`;
+  if (id === "verao") return `No Airbnb hoje: ${brl(g("Verão").med * 2)} por 2 diárias em janeiro, num dia de semana.`;
+  if (id === "rir") return "Hotéis perto do Rock in Rio 2026: de R$ 2.400 a R$ 8.400 por 2 diárias.";
   return "";
 }
 function renderDetail() {
@@ -852,7 +852,7 @@ function renderDetail() {
     </div>
     <dl>
       <div><dt>Quando</dt><dd>${e.quando}</dd></div>
-      <div><dt>Diária estimada ${U.chaves ? "das duas chaves" : "do apartamento"}</dt><dd><span class="fx"><b>${brl(diaria)}</b><span style="opacity:.85">${fmt(m, 2).replace(/,?0+$/, "")}x a diária comum</span></span></dd></div>
+      <div><dt>2 diárias estimadas ${U.chaves ? "nas duas chaves" : "no apartamento"}</dt><dd><span class="fx"><b>${brl(diaria * 2)}</b><span style="opacity:.85">${brl(diaria)} por noite · ${fmt(m, 2).replace(/,?0+$/, "")}x a diária comum</span></span></dd></div>
       <div><dt>Ocupação estimada</dt><dd>${pct(o, 0)} das noites</dd></div>
     </dl>`;
 }
@@ -932,14 +932,14 @@ let realChart = null;
 function buildReal(T) {
   T = T || T0();
   if (realChart) { charts = charts.filter(c => c !== realChart); realChart.destroy(); }
-  const R = REAL[tipoKey()], ymax = Math.ceil(Math.max(...R.map(d => d.max), ...R.map(estDia)) / 200) * 200 + 200;
+  const R = REAL[tipoKey()], ymax = Math.ceil(Math.max(...R.map(d => d.max * 2), ...R.map(d => estDia(d) * 2)) / 400) * 400 + 400;
   realChart = new Chart($("cReal"), {
     data: { labels: R.map(d => d.nome), datasets: [
-      { type: "bar", label: "Faixa de preço", data: R.map(d => [d.min, d.max]), backgroundColor: R.map(d => d.peak ? T.band + "66" : T.soft + "99"), borderRadius: 6, barThickness: narrow ? 26 : 40, order: 3 },
-      { type: "scatter", label: "Mediana", data: R.map(d => ({ x: d.nome, y: d.med })), backgroundColor: T.fg, pointRadius: 5, order: 2 },
-      { type: "scatter", label: U.chaves ? "Estudo (duas chaves)" : "Diária do estudo", data: R.map(d => ({ x: d.nome, y: Math.round(estDia(d)) })), backgroundColor: T.sand, pointStyle: "rectRot", pointRadius: 10, order: 1 } ] },
+      { type: "bar", label: "Faixa de preço", data: R.map(d => [d.min * 2, d.max * 2]), backgroundColor: R.map(d => d.peak ? T.band + "66" : T.soft + "99"), borderRadius: 6, barThickness: narrow ? 26 : 40, order: 3 },
+      { type: "scatter", label: "Mediana", data: R.map(d => ({ x: d.nome, y: d.med * 2 })), backgroundColor: T.fg, pointRadius: 5, order: 2 },
+      { type: "scatter", label: U.chaves ? "Estudo (duas chaves)" : "Diária do estudo", data: R.map(d => ({ x: d.nome, y: Math.round(estDia(d)) * 2 })), backgroundColor: T.sand, pointStyle: "rectRot", pointRadius: 10, order: 1 } ] },
     options: { maintainAspectRatio: false, plugins: { legend: { position: "bottom" },
-      tooltip: { callbacks: { label: c => c.dataset.type === "bar" ? `De ${brl(c.raw[0])} a ${brl(c.raw[1])}` : `${c.dataset.label}: ${brl(c.raw.y)}` } } },
+      tooltip: { callbacks: { label: c => c.dataset.type === "bar" ? `2 diárias: de ${brl(c.raw[0])} a ${brl(c.raw[1])}` : `${c.dataset.label}: ${brl(c.raw.y)} em 2 diárias` } } },
       scales: { x: { type: "category", grid: { display: false }, ticks: { color: T.fg, maxRotation: 0, autoSkip: false, font: { size: narrow ? 11 : 14 } } },
         y: { min: 0, max: ymax, grid: { color: T.line }, ticks: { callback: v => "R$ " + fmt(v) } } } } });
   charts.push(realChart);
@@ -1005,14 +1005,14 @@ function buildRes(T) {
 function renderReal() {
   const k = tipoKey(), R = REAL[k], n = R.reduce((s, d) => s + d.n, 0);
   $("dates").innerHTML = R.map(d => `<div class="date${d.peak ? " peak" : ""}"><small>${d.quando}</small><h3>${d.nome}</h3>
-    <div class="p">${brl(d.med)}</div><div class="r">por noite · de ${brl(d.min)} a ${brl(d.max)}</div>
+    <div class="r" style="margin-bottom:-2px">2 diárias</div><div class="p">${brl(d.med * 2)}</div><div class="r">${brl(d.med)} por noite · de ${brl(d.min * 2)} a ${brl(d.max * 2)} nas 2 diárias</div>
     <a href="${AB(k)}&checkin=${d.ci}&checkout=${d.co}" target="_blank" rel="noopener">Ver no Airbnb agora →</a></div>`).join("");
   $("realLead").textContent = U.chaves
-    ? `Preços reais de apartamentos inteiros de 2 quartos na Ilha Pura e arredores (Camorim e Barra Olímpica), coletados no Airbnb em 5 de novembro de 2026, para 4 hóspedes: ${n} anúncios em cinco datas. O valor é o total pago pelo hóspede, já com limpeza e taxas, dividido pelas noites.`
-    : `Preços reais de apartamentos inteiros de 1 quarto na Ilha Pura e arredores (Camorim e Barra Olímpica), coletados no Airbnb em 5 de novembro de 2026, para 2 hóspedes: ${n} anúncios em cinco datas. O valor é o total pago pelo hóspede, já com limpeza e taxas, dividido pelas noites.`;
+    ? `Preços reais de apartamentos inteiros de 2 quartos na Ilha Pura e arredores (Camorim), coletados no Airbnb em 5 de novembro de 2026, para 4 hóspedes: ${n} anúncios em cinco datas. Como quase ninguém fica uma noite só, os valores aparecem sempre somando 2 diárias, como no Airbnb, já com limpeza e taxas.`
+    : `Preços reais de apartamentos inteiros de 1 quarto na Ilha Pura e arredores (Camorim), coletados no Airbnb em 5 de novembro de 2026, para 2 hóspedes: ${n} anúncios em cinco datas. Como quase ninguém fica uma noite só, os valores aparecem sempre somando 2 diárias, como no Airbnb, já com limpeza e taxas.`;
   $("realNote").textContent = U.chaves
-    ? "Barra: do menor ao maior preço encontrado. Ponto: mediana dos anúncios de 2 quartos. Losango: diária do estudo somando as duas chaves da Double Suíte (suíte sozinha + suíte com sala), no cenário Base. A diária do estudo fica abaixo do que o hóspede paga porque não inclui limpeza nem taxas."
-    : "Barra: do menor ao maior preço encontrado. Ponto: mediana dos anúncios. Losango: diária usada no estudo, no cenário Base. A diária do estudo fica abaixo do que o hóspede paga porque não inclui limpeza nem taxas.";
+    ? "Valores de 2 diárias. Barra: do menor ao maior preço encontrado. Ponto: mediana dos anúncios de 2 quartos. Losango: 2 diárias do estudo somando as duas chaves da Double Suíte (suíte sozinha + suíte com sala), no cenário Base. O valor do estudo fica abaixo do que o hóspede paga porque não inclui limpeza nem taxas."
+    : "Valores de 2 diárias. Barra: do menor ao maior preço encontrado. Ponto: mediana dos anúncios. Losango: 2 diárias pelo valor usado no estudo, no cenário Base. O valor do estudo fica abaixo do que o hóspede paga porque não inclui limpeza nem taxas.";
 }
 
 /* ===== noites alugadas ===== */
@@ -1022,7 +1022,7 @@ const liqN = (n, adr, g) => { const rec = n * adr, c = custos(rec, g); return re
 function diariasN() { const rb = calc(CEN.Base); const m = Math.round(rb.adrTot / 5) * 5; return U.chaves ? [m, 600, 700] : [m, 350, 400]; }
 function renderDiariaBtns() {
   const ds = diariasN(); if (!ds.includes(adrN)) adrN = ds[0];
-  $("segDiaria").innerHTML = ds.map((d, i) => `<button type="button" aria-pressed="${d === adrN}" data-v="${d}">${brl(d)}${i === 0 ? " · média do estudo" : ""}</button>`).join("");
+  $("segDiaria").innerHTML = ds.map((d, i) => `<button type="button" aria-pressed="${d === adrN}" data-v="${d}">2 diárias de ${brl(d * 2)}${i === 0 ? " · média do estudo" : ""}</button>`).join("");
 }
 $("segDiaria").addEventListener("click", ev => { const b = ev.target.closest("button"); if (!b) return; adrN = +b.dataset.v; renderDiariaBtns(); renderNights(true); });
 segBind("segGestN", v => { gN = v; renderNights(true); });
@@ -1032,41 +1032,41 @@ function renderNights(animate) {
   const max = liqN(30, diariasN()[2], "auto");
   const near = NIVEIS.reduce((a, b) => Math.abs(b - baseN) < Math.abs(a - baseN) ? b : a);
   $("nightsLead").textContent = U.chaves
-    ? "Na Double Suíte, a diária é a soma das duas chaves alugadas na mesma noite. Escolha a diária média e veja quanto a unidade rende com 10, 15, 20, 25 ou 30 noites no mês."
-    : "Escolha a diária média e veja quanto o apartamento rende com 10, 15, 20, 25 ou 30 noites alugadas no mês. Com o calendário de eventos da região, o cenário Base fica perto de 20 noites.";
+    ? "Na Double Suíte, a diária é a soma das duas chaves alugadas na mesma noite. Escolha o valor médio de 2 diárias e veja quanto a unidade rende com 10, 15, 20, 25 ou 30 noites no mês."
+    : "Escolha o valor médio de 2 diárias e veja quanto o apartamento rende com 10, 15, 20, 25 ou 30 noites alugadas no mês. Com o calendário de eventos da região, o cenário Base fica perto de 20 noites.";
   const R = REAL[tipoKey()];
   $("refReal").innerHTML = U.chaves
-    ? `<b>Referência real, novembro de 2026</b><span>Num fim de semana comum, sem evento, os 2 quartos inteiros da Ilha Pura saem por ${brl(R[1].med)} por noite na mediana do Airbnb. No Carnaval, a mediana vai a ${brl(R[3].med)}.</span>`
-    : `<b>Referência real, novembro de 2026</b><span>Num fim de semana comum, sem evento, os apartamentos de 1 quarto da Ilha Pura saem por ${brl(R[1].med)} por noite na mediana do Airbnb, e os 25% mais caros passam de R$ 549. No Carnaval, a mediana vai a ${brl(R[3].med)}.</span>`;
+    ? `<b>Referência real, novembro de 2026</b><span>Num fim de semana comum, sem evento, 2 diárias num 2 quartos inteiro da Ilha Pura saem por ${brl(R[1].med * 2)} na mediana do Airbnb. No Carnaval, 2 diárias vão a ${brl(R[3].med * 2)}.</span>`
+    : `<b>Referência real, novembro de 2026</b><span>Num fim de semana comum, sem evento, 2 diárias num 1 quarto da Ilha Pura saem por ${brl(R[1].med * 2)} na mediana do Airbnb, e nos 25% mais caros passam de R$ 1.098. No Carnaval, 2 diárias vão a ${brl(R[3].med * 2)}.</span>`;
   $("nights").innerHTML = vals.map(v => `<div class="night${v.n === near ? " base" : ""}">${v.n === near ? '<span class="tag">Perto do Base</span>' : ""}
       <div class="nn">${v.n}<small>noites</small></div><div class="oc">${Math.round(v.n / 30 * 100)}% do mês alugado</div>
       <div><div class="lb">Líquido por mês</div><div class="liq">${brl(v.liq)}</div></div>
       <div class="br"><span class="lb">Bruto </span>${brl(v.br)}</div><div class="vbar"><i data-w="${Math.max(0, v.liq / max * 100).toFixed(1)}"></i></div></div>`).join("");
   const set = () => $("nights").querySelectorAll(".vbar i").forEach(i => i.style.width = i.dataset.w + "%");
   if (animate && !reduce) { setTimeout(set, 120); $("nights").querySelectorAll(".liq").forEach((el, k) => tween(el, vals[k].liq * .5, vals[k].liq, brl, 800)); } else set();
-  $("nightsNote").textContent = `Diária média de ${brl(adrN)} em todas as noites alugadas. Desconta ${gN === "lobie" ? "canais de 16,5%, gestão Lobie de 12% sobre a receita líquida" : "taxa de 3% do Airbnb"}, manutenção de 3% e ${brl(fixos(U))} fixos por mês (condomínio, IPTU, luz e internet). No cenário Base, a diária média do ano é ${brl(rb.adrTot)} e a unidade fica alugada cerca de ${fmt(baseN, 1)} noites por mês${U.chaves ? " por chave" : ""}.`;
+  $("nightsNote").textContent = `2 diárias de ${brl(adrN * 2)} (${brl(adrN)} por noite) em todas as noites alugadas. Desconta ${gN === "lobie" ? "canais de 16,5%, gestão Lobie de 12% sobre a receita líquida" : "taxa de 3% do Airbnb"}, manutenção de 3% e ${brl(fixos(U))} fixos por mês (condomínio, IPTU, luz e internet). No cenário Base, 2 diárias saem em média por ${brl(Math.round(rb.adrTot / 5) * 10)} no ano e a unidade fica alugada cerca de ${fmt(baseN, 1)} noites por mês${U.chaves ? " por chave" : ""}.`;
   renderTabela();
 }
 function renderTabela() {
   const ds = U.chaves ? [diariasN()[0], 550, 600, 700] : [diariasN()[0], 320, 350, 400];
   const uniq = [...new Set(ds)].sort((a, b) => a - b);
-  $("tUnid").innerHTML = `<thead><tr><th>Diária média</th>${NIVEIS.map(n => `<th>${n} noites</th>`).join("")}</tr></thead><tbody>${uniq.map(d => `<tr${d === adrN ? ' style="background:var(--surface2)"' : ""}><td><b>${brl(d)}</b></td>${NIVEIS.map(n => `<td class="n">${brl(liqN(n, d, gN))}</td>`).join("")}</tr>`).join("")}</tbody>`;
-  $("tUnidNote").textContent = `${gN === "lobie" ? "Com gestão Lobie." : "Em autogestão: você cuida dos anúncios, do check-in e da limpeza."} Diárias médias mais altas pedem anúncio bem avaliado e preço alto nas datas de evento.`;
+  $("tUnid").innerHTML = `<thead><tr><th>2 diárias (média)</th>${NIVEIS.map(n => `<th>${n} noites</th>`).join("")}</tr></thead><tbody>${uniq.map(d => `<tr${d === adrN ? ' style="background:var(--surface2)"' : ""}><td><b>${brl(d * 2)}</b><br><small style="color:var(--muted)">${brl(d)} por noite</small></td>${NIVEIS.map(n => `<td class="n">${brl(liqN(n, d, gN))}</td>`).join("")}</tr>`).join("")}</tbody>`;
+  $("tUnidNote").textContent = `${gN === "lobie" ? "Com gestão Lobie." : "Em autogestão: você cuida dos anúncios, do check-in e da limpeza."} Valores mais altos pedem anúncio bem avaliado e preço alto nas datas de evento.`;
 }
 
 /* ===== simulador ===== */
 let gest = "lobie", anoSim = "media", desc = 0;
 function sim() {
   const preco = U.preco * (1 - desc), adr = +$("sAdr").value, occ = +$("sOcc").value / 100;
-  $("oAdr").textContent = brl(adr); $("oOcc").textContent = Math.round(occ * 100) + "%";
+  $("oAdr").textContent = `${brl(adr * 2)} (2 diárias)`; $("oOcc").textContent = Math.round(occ * 100) + "%";
   $("hPreco").textContent = `Preço da unidade: ${brl(preco)}. Investimento total soma mobília e decoração (${brl(U.mobilia)}) e ITBI com cartório (3,8%).`;
-  $("lAdr").textContent = U.chaves ? "Diária da chave com sala, dias comuns" : "Diária em dias comuns";
-  $("hAdr").textContent = U.chaves ? `A suíte sozinha sai por 85% desse valor: ${brl(adr * SUITE_ADR)}.` : "";
+  $("lAdr").textContent = U.chaves ? "2 diárias da chave com sala, dias comuns" : "2 diárias em dias comuns";
+  $("hAdr").textContent = `${brl(adr)} por noite.` + (U.chaves ? ` A suíte sozinha sai por 85% desse valor: ${brl(adr * SUITE_ADR * 2)} em 2 diárias.` : "");
   const c = { adr, occ, aO: (occ - CEN.Base.occ) * .5, aM: 1 };
   const r = calc(c, anoSim, gest, preco);
   setNum($("rMes"), r.mesLiq, brl); setNum($("rBruto"), r.mesBruto, brl);
   $("rYieldP").textContent = pct(r.yieldP); $("rYield").textContent = pct(r.yield); $("rInv").textContent = brl(r.inv);
-  $("rOcc").textContent = pct(r.occ); $("rAdrM").textContent = brl(r.adrTot) + (U.chaves ? " (2 chaves)" : "");
+  $("rOcc").textContent = pct(r.occ); $("rAdrM").textContent = brl(r.adrTot * 2) + (U.chaves ? " (2 chaves)" : "");
   $("rX").textContent = fmt(r.mesLiq / r.tradLiq, 1) + "x";
   const top = U.chaves ? 12000 : 7000;
   $("rMax").textContent = brl(top);
@@ -1126,23 +1126,23 @@ function renderCompare(animate) {
   if (animate && !reduce) setTimeout(set, 150); else set();
   const b = calc(CEN.Base);
   $("resLead").textContent = U.chaves
-    ? `Uma Double Suíte de 47 m² na Barra Olímpica alugaria por cerca de ${brl(U.trad)} no contrato tradicional, ou ${brl(t)} depois da taxa da imobiliária. Na temporada, com as duas chaves e gestão Lobie, o líquido do cenário Base fica em ${brl(b.mesLiq)}: ${fmt(b.mesLiq / t, 1)}x mais.`
-    : `Um 1 quarto de 28 m² na Barra Olímpica alugaria por cerca de ${brl(U.trad)} no contrato tradicional, ou ${brl(t)} depois da taxa da imobiliária. Na temporada, mesmo pagando canais e gestora, o líquido do cenário Base fica em ${brl(b.mesLiq)}: ${fmt(b.mesLiq / t, 1)}x mais.`;
+    ? `Uma Double Suíte de 47 m² na Ilha Pura alugaria por cerca de ${brl(U.trad)} no contrato tradicional, ou ${brl(t)} depois da taxa da imobiliária. Na temporada, com as duas chaves e gestão Lobie, o líquido do cenário Base fica em ${brl(b.mesLiq)}: ${fmt(b.mesLiq / t, 1)}x mais.`
+    : `Um 1 quarto de 28 m² na Ilha Pura alugaria por cerca de ${brl(U.trad)} no contrato tradicional, ou ${brl(t)} depois da taxa da imobiliária. Na temporada, mesmo pagando canais e gestora, o líquido do cenário Base fica em ${brl(b.mesLiq)}: ${fmt(b.mesLiq / t, 1)}x mais.`;
 }
 function renderPrem() {
   const S = ["Conservador", "Base", "Otimista"].map(n => ({ n, c: CEN[n], r: calc(CEN[n]) }));
   const k = U.chaves ? 1 + SUITE_ADR : 1;
   const row = (l, f, b) => `<tr><td>${b ? "<b>" + l + "</b>" : l}</td>${S.map(s => `<td class="n">${f(s)}</td>`).join("")}</tr>`;
   $("tPrem").innerHTML = `<thead><tr><th>Item · ${U.nome}</th><th>Conservador</th><th>Base</th><th>Otimista</th></tr></thead><tbody>
-    ${row(U.chaves ? "Diária das duas chaves em dias comuns" : "Diária em dias comuns", s => brl(s.c.adr * k))}
+    ${row(U.chaves ? "2 diárias nas duas chaves, dias comuns" : "2 diárias em dias comuns", s => brl(s.c.adr * k * 2))}
     ${row("Ocupação em dias comuns", s => pct(s.c.occ, 0))}
-    ${row(U.chaves ? "Diária média no ano, duas chaves" : "Diária média no ano, com eventos", s => brl(s.r.adrTot))}
+    ${row(U.chaves ? "2 diárias, média do ano nas duas chaves" : "2 diárias, média do ano com eventos", s => brl(s.r.adrTot * 2))}
     ${row("Ocupação média no ano", s => pct(s.r.occ))}
     ${row("Receita bruta por mês", s => brl(s.r.mesBruto))}
     ${row("Líquido por mês (gestão Lobie)", s => brl(s.r.mesLiq), 1)}
     ${row("Retorno ao ano sobre o preço", s => pct(s.r.yieldP), 1)}
     ${row("Retorno sobre o investimento total", s => pct(s.r.yield))}</tbody>`;
-  $("premNote").textContent = "O cenário Conservador reproduz o mercado local médio medido pela AirDNA (diária perto de R$ 240 e ocupação de cerca de 51%, sem gestão profissional). O Base e o Otimista usam diárias abaixo das medianas reais do Airbnb na Ilha Pura, coletadas em 05/11/2026, e somam o calendário de eventos da região." + (U.chaves ? " Na Double Suíte, a chave com sala segue a diária do 1 quarto e a suíte sozinha sai por 85% dela, com 5 pontos a menos de ocupação." : "");
+  $("premNote").textContent = "O cenário Conservador reproduz o mercado local médio medido pela AirDNA (diária perto de R$ 240, ou R$ 480 em 2 diárias, e ocupação de cerca de 51%, sem gestão profissional). O Base e o Otimista usam diárias abaixo das medianas reais do Airbnb na Ilha Pura, coletadas em 05/11/2026, e somam o calendário de eventos da região." + (U.chaves ? " Na Double Suíte, a chave com sala segue a diária do 1 quarto e a suíte sozinha sai por 85% dela, com 5 pontos a menos de ocupação." : "");
   $("custoFix").textContent = `Condomínio de R$ 15 por m² (${brl(U.condo)} por mês) e luz, internet e IPTU de ${brl(U.contas)} por mês.`;
   $("custoInv").textContent = `Investimento: unidade + mobília e decoração estimadas em ${brl(U.mobilia)} + 3,8% de ITBI e cartório.`;
   $("tipoTxt").textContent = U.chaves ? "Double Suíte operando em duas chaves: suíte sozinha (2 hóspedes) + suíte com sala (até 4)." : "1 quarto tipo, de 2 a 4 hóspedes, operando com a Lobie.";
