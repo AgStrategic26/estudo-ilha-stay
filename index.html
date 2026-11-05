@@ -319,11 +319,11 @@ footer a{color:inherit}
     <p class="sub">Um apartamento ao lado do Parque Olímpico e do Riocentro, feito para alugar por temporada.</p>
     <div class="loc">Av. Carlos Lima, 475 · Ilha Pura · Rio de Janeiro</div>
     <div class="kpis" id="kpis">
-      <div class="kpi main"><b class="count" id="k1">R$ 0</b><span>líquido por mês no 1 quarto, com gestão Lobie (cenário Base)</span></div>
-      <div class="kpi"><b class="count" id="k2">R$ 0</b><span>líquido por mês na Double Suíte operando com duas chaves</span></div>
-      <div class="kpi"><b class="count" id="k3">0%</b><span>de retorno ao ano sobre o preço de tabela do 1 quarto</span></div>
+      <div class="kpi main"><b class="count" id="k1">R$ 0</b><span>líquido por mês no 1 quarto, com gestão Lobie (cenário Otimista)</span></div>
+      <div class="kpi"><b class="count" id="k2">R$ 0</b><span>líquido por mês na Double Suíte com duas chaves (cenário Otimista)</span></div>
+      <div class="kpi"><b class="count" id="k3">0%</b><span>de retorno ao ano sobre o preço de tabela do 1 quarto (Otimista)</span></div>
       <div class="kpi"><b class="count" id="k4">R$ 0</b><span>pagos até as chaves no 1 quarto: 30% em 38 meses</span></div>
-      <div class="kpi"><b class="count" id="k5">0x</b><span>o que o 1 quarto renderia no aluguel tradicional</span></div>
+      <div class="kpi"><b class="count" id="k5">0x</b><span>o que o 1 quarto renderia no aluguel tradicional (Otimista)</span></div>
       <div class="kpi"><b class="count" id="k6">0%</b><span>de ocupação dos hotéis da Barra em outubro de 2026</span></div>
     </div>
   </div>
@@ -765,7 +765,7 @@ const segBind = (id, fn) => $(id).addEventListener("click", ev => {
 
 /* ===== KPIs do topo (calculados pelo modelo) ===== */
 (function kpis() {
-  const a = calc(CEN.Base, "media", "lobie", UNID.q1.preco, UNID.q1), b = calc(CEN.Base, "media", "lobie", UNID.ds.preco, UNID.ds);
+  const a = calc(CEN.Otimista, "media", "lobie", UNID.q1.preco, UNID.q1), b = calc(CEN.Otimista, "media", "lobie", UNID.ds.preco, UNID.ds);
   const P = UNID.q1.plano, ateChaves = P.ato + 3 * P.d + 5 * P.sem + P.ch + 34 * P.men;
   const K = [[$("k1"), a.mesLiq, brl], [$("k2"), b.mesLiq, brl], [$("k3"), a.yieldP * 100, v => fmt(v, 1) + "% a.a."],
     [$("k4"), ateChaves, brl], [$("k5"), a.mesLiq / a.tradLiq, v => fmt(v, 1) + "x"], [$("k6"), 87.72, v => fmt(v, 1) + "%"]];
